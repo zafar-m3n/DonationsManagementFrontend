@@ -291,7 +291,7 @@ const DashboardPage = () => {
                       <button
                         key={cat.id ?? `cat-${index}`}
                         type="button"
-                        onClick={() => openCategoryModal(cat)}
+                        // onClick={() => openCategoryModal(cat)}
                         className="text-left rounded-lg border border-slate-100 bg-white shadow-sm hover:shadow-md transition-shadow p-4 focus:outline-none focus:ring-2 focus:ring-emerald-400"
                       >
                         <div className="flex items-center justify-between mb-2">
@@ -302,7 +302,7 @@ const DashboardPage = () => {
                               {cat.name || "Uncategorized"}
                             </span>
                           </div>
-                          <Icon icon="mdi:chevron-right" width={20} className="text-slate-400" />
+                          {/* <Icon icon="mdi:chevron-right" width={20} className="text-slate-400" /> */}
                         </div>
 
                         <p className="text-sm text-slate-600 mb-2">
@@ -316,7 +316,7 @@ const DashboardPage = () => {
                           <div className={`h-2 rounded-full ${pastelBarFill}`} style={{ width: `${ratio}%` }} />
                         </div>
 
-                        <p className="mt-2 text-xs text-slate-500">Click to view item breakdown.</p>
+                        {/* <p className="mt-2 text-xs text-slate-500">Click to view item breakdown.</p> */}
                       </button>
                     );
                   })}
