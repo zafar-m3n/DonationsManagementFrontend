@@ -138,7 +138,7 @@ const DashboardPage = () => {
             </div>
 
             {/* DISTRIBUTED (OUT) SUMMARY – REWORKED UI */}
-            <section className="mt-6 rounded-2xl bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 text-emerald-50 shadow-lg">
+            <section className="mt-6 rounded-2xl bg-linear-to-br from-emerald-900 via-emerald-800 to-emerald-700 text-emerald-50 shadow-lg">
               <div className="px-5 pt-5 pb-4 border-b border-emerald-700/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
                   <div className="flex items-center gap-2">
