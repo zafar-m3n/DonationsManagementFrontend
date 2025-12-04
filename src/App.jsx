@@ -20,10 +20,10 @@ function App() {
       <Router>
         <Routes>
           {/* When the app starts, go to /dashboard */}
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
 
           {/* ✅ Public Dashboard */}
-          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/" element={<DashboardPage />} />
 
           {/* ✅ Auth-only member routes */}
           <Route

@@ -26,7 +26,7 @@ const DefaultLayout = ({ children }) => {
     token.removeAuthToken();
     token.removeUserData();
     setDropdownOpen(false);
-    navigate("/dashboard"); // redirect to dashboard after logout
+    navigate("/"); // redirect to dashboard after logout
   };
 
   return (
