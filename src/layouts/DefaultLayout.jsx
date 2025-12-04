@@ -82,7 +82,7 @@ const DefaultLayout = ({ children }) => {
                   onClick={() => setDropdownOpen((prev) => !prev)}
                 >
                   <IconComponent icon="mdi:account-circle" width="22" className="text-accent" />
-                  <span>{user?.name}</span>
+                  <span>{user?.full_name}</span>
                   <IconComponent icon={dropdownOpen ? "mdi:chevron-up" : "mdi:chevron-down"} width="18" />
                 </button>
 

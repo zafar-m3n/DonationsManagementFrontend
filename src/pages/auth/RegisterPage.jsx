@@ -13,7 +13,7 @@ import Heading from "@/components/ui/Heading";
 
 // Validation schema
 const schema = Yup.object().shape({
-  name: Yup.string().required("Full name is required"),
+  full_name: Yup.string().required("Full name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
   password: Yup.string().min(6, "Minimum 6 characters").required("Password is required"),
 });
@@ -35,7 +35,7 @@ const RegisterPage = () => {
 
     try {
       const payload = {
-        name: data.name,
+        full_name: data.full_name,
         email: data.email,
         password: data.password,
       };
@@ -72,7 +72,7 @@ const RegisterPage = () => {
         </Heading>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-4">
-          <TextInput placeholder="Enter Your Full Name" {...register("name")} error={errors.name?.message} />
+          <TextInput placeholder="Enter Your Full Name" {...register("full_name")} error={errors.full_name?.message} />
 
           <TextInput type="email" placeholder="Enter Your Email" {...register("email")} error={errors.email?.message} />
 
