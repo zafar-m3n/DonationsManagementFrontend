@@ -42,7 +42,7 @@ const DefaultLayout = ({ children }) => {
               <img src="/logo.png" alt="SLMCS Logo" className="w-10 h-10 object-contain" />
 
               <Link to="/dashboard" className="text-xl font-semibold">
-                SLMCS Donation Management
+                SLMCS Donation Management {!isLoggedIn && <span className="text-accent">Dashboard</span>}
               </Link>
             </div>
 
@@ -56,18 +56,24 @@ const DefaultLayout = ({ children }) => {
                   Dashboard
                 </NavLink>
 
-                <NavLink
+                {/* <NavLink
                   to="/member/donations"
                   className={({ isActive }) => (isActive ? "text-accent font-semibold" : "hover:text-accent")}
                 >
                   Donations
-                </NavLink>
+                </NavLink> */}
 
                 <NavLink
                   to="/member/donation/new"
                   className={({ isActive }) => (isActive ? "text-accent font-semibold" : "hover:text-accent")}
                 >
                   New Donation
+                </NavLink>
+                <NavLink
+                  to="/member/upload"
+                  className={({ isActive }) => (isActive ? "text-accent font-semibold" : "hover:text-accent")}
+                >
+                  Upload
                 </NavLink>
               </nav>
             )}

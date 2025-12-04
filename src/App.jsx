@@ -9,6 +9,7 @@ import LoginPage from "@/pages/auth/LoginPage";
 import DashboardPage from "@/pages/dashboard/DashboardPage";
 import DonationsPage from "@/pages/member/donations/DonationsPage";
 import NewDonationPage from "@/pages/member/newDonation/NewDonationPage";
+import UploadPage from "@/pages/upload/UploadPage";
 
 import PrivateRoute from "@/components/PrivateRoute";
 import PublicRoute from "@/components/PublicRoute";
@@ -38,6 +39,14 @@ function App() {
             element={
               <PrivateRoute>
                 <DonationsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/member/upload"
+            element={
+              <PrivateRoute>
+                <UploadPage />
               </PrivateRoute>
             }
           />

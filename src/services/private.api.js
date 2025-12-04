@@ -1,4 +1,4 @@
-// src/api/privateAPI.js (or wherever this file lives)
+// src/api/privateAPI.js
 import instance from "@/lib/axios";
 
 /* ========================== */
@@ -20,17 +20,16 @@ const loginUser = async (data) => {
 /* ========================== */
 /* Dashboard (Public)         */
 /* ========================== */
-// Anyone can see the dashboard summary
+
 const getDashboardSummary = async () => {
-  return await instance.apiClient.get("/api/v1/donations/summary", {
+  return await instance.apiClient.get("/api/v1/donations/dashboard", {
     headers: instance.publicHeaders(),
   });
 };
 
 /* ========================== */
-/* Categories & Items (Public)*/
+/* Categories (Protected)     */
 /* ========================== */
-// Read-only lists, no auth needed
 
 const getCategories = async () => {
   return await instance.apiClient.get("/api/v1/donations/categories", {
@@ -38,31 +37,61 @@ const getCategories = async () => {
   });
 };
 
+const createCategory = async (data) => {
+  return await instance.apiClient.post("/api/v1/donations/categories", data, {
+    headers: instance.defaultHeaders(),
+  });
+};
+
+/* ========================== */
+/* Items (Protected)          */
+/* ========================== */
+
 const getItems = async () => {
   return await instance.apiClient.get("/api/v1/donations/items", {
     headers: instance.defaultHeaders(),
   });
 };
 
-const getItemsByCategory = async (categoryId) => {
-  return await instance.apiClient.get(`/api/v1/donations/items/category/${categoryId}`, {
+const getItemsByCategory = async () => {
+  return await instance.apiClient.get("/api/v1/donations/items/by-category", {
+    headers: instance.defaultHeaders(),
+  });
+};
+
+const createItem = async (data) => {
+  return await instance.apiClient.post("/api/v1/donations/items", data, {
     headers: instance.defaultHeaders(),
   });
 };
 
 /* ========================== */
-/* Donations (Protected)      */
+/* Stock Movements (Protected)*/
 /* ========================== */
 
-const createDonation = async (data) => {
-  return await instance.apiClient.post("/api/v1/donations/donations", data, {
+const stockIn = async (data) => {
+  // data: { item_id, quantity, reason? }
+  return await instance.apiClient.post("/api/v1/donations/stock/in", data, {
     headers: instance.defaultHeaders(),
   });
 };
 
-const getDonations = async () => {
-  return await instance.apiClient.get("/api/v1/donations/donations", {
+const stockOut = async (data) => {
+  // data: { item_id, quantity, reason? }
+  return await instance.apiClient.post("/api/v1/donations/stock/out", data, {
     headers: instance.defaultHeaders(),
+  });
+};
+
+const getItemHistory = async (itemId) => {
+  return await instance.apiClient.get(`/api/v1/donations/stock/history/${itemId}`, {
+    headers: instance.defaultHeaders(),
+  });
+};
+
+const importDonationsCsv = async (formData) => {
+  return await instance.apiClient.post("/api/v1/uploads/import", formData, {
+    headers: instance.defaultHeaders("multipart/form-data"),
   });
 };
 
@@ -78,14 +107,22 @@ const privateAPI = {
   // Dashboard
   getDashboardSummary,
 
-  // Categories & Items
+  // Categories
   getCategories,
+  createCategory,
+
+  // Items
   getItems,
   getItemsByCategory,
+  createItem,
 
-  // Donations
-  createDonation,
-  getDonations,
+  // Stock Movements
+  stockIn,
+  stockOut,
+  getItemHistory,
+
+  // Imports
+  importDonationsCsv,
 };
 
 export default privateAPI;
