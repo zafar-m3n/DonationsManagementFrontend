@@ -3,6 +3,9 @@ import DefaultLayout from "@/layouts/DefaultLayout";
 import API from "@/services/index";
 import Icon from "@/components/ui/Icon";
 import Modal from "@/components/ui/Modal";
+import CountUp from "react-countup";
+
+const FUNDS_ALLOCATED_LKR = 3500000; // 3.5M LKR (static for now)
 
 const DashboardPage = () => {
   const [summary, setSummary] = useState(null);
@@ -66,6 +69,16 @@ const DashboardPage = () => {
     total_quantity_sent: 0,
   };
 
+  // Safe defaults for the sent breakdown (OUT summary)
+  const sentBreakdown = summary?.sent_breakdown || {
+    rice_kg_sent: 0,
+    dhal_kg_sent: 0,
+    salt_kg_sent: 0,
+    sugar_kg_sent: 0,
+    water_bottles_sent: 0,
+    other_essentials_sent: 0,
+  };
+
   return (
     <DefaultLayout>
       <div className="space-y-6">
@@ -83,7 +96,9 @@ const DashboardPage = () => {
                   <span className="text-xs uppercase tracking-wide font-semibold">Total Item Types</span>
                   <Icon icon="mdi:package-variant" width={22} />
                 </div>
-                <p className="text-2xl font-bold">{totals.total_items}</p>
+                <p className="text-2xl font-bold">
+                  <CountUp end={totals.total_items} duration={1} />
+                </p>
                 <p className="text-xs opacity-80 mt-1">Unique items tracked in the system.</p>
               </div>
 
@@ -92,17 +107,10 @@ const DashboardPage = () => {
                   <span className="text-xs uppercase tracking-wide font-semibold">Total Received</span>
                   <Icon icon="mdi:download-box" width={22} />
                 </div>
-                <p className="text-2xl font-bold">{totals.total_quantity_received}</p>
+                <p className="text-2xl font-bold">
+                  <CountUp end={totals.total_quantity_received} duration={1} separator="," />
+                </p>
                 <p className="text-xs opacity-80 mt-1">Overall quantity donated to SLMCS.</p>
-              </div>
-
-              <div className={`rounded-lg p-4 shadow-sm ${pastelCardColors[2]}`}>
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs uppercase tracking-wide font-semibold">Total Distributed</span>
-                  <Icon icon="mdi:upload-box" width={22} />
-                </div>
-                <p className="text-2xl font-bold">{totals.total_quantity_sent}</p>
-                <p className="text-xs opacity-80 mt-1">Items sent out to beneficiaries.</p>
               </div>
 
               <div className={`rounded-lg p-4 shadow-sm ${pastelCardColors[3]}`}>
@@ -110,10 +118,154 @@ const DashboardPage = () => {
                   <span className="text-xs uppercase tracking-wide font-semibold">Current In Stock</span>
                   <Icon icon="mdi:warehouse" width={22} />
                 </div>
-                <p className="text-2xl font-bold">{totals.total_quantity_current}</p>
+                <p className="text-2xl font-bold">
+                  <CountUp end={totals.total_quantity_current} duration={1} separator="," />
+                </p>
                 <p className="text-xs opacity-80 mt-1">Quantity currently available across all categories.</p>
               </div>
+
+              {/* FUNDS CARD (STATIC) */}
+              <div className={`rounded-lg p-4 shadow-sm ${pastelCardColors[4]}`}>
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-xs uppercase tracking-wide font-semibold">Funds Allocated</span>
+                  <Icon icon="mdi:cash-multiple" width={22} />
+                </div>
+                <p className="text-2xl font-bold">
+                  LKR <CountUp end={FUNDS_ALLOCATED_LKR} duration={1.2} separator="," />
+                </p>
+                <p className="text-xs opacity-80 mt-1">Donated / allocated towards relief items.</p>
+              </div>
             </div>
+
+            {/* DISTRIBUTED (OUT) SUMMARY – REWORKED UI */}
+            <section className="mt-6 rounded-2xl bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 text-emerald-50 shadow-lg">
+              <div className="px-5 pt-5 pb-4 border-b border-emerald-700/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <Icon icon="mdi:hand-heart" width={22} />
+                    <h2 className="text-sm font-semibold tracking-wide uppercase">Relief Items Distributed</h2>
+                  </div>
+                  <p className="mt-1 text-xs text-emerald-100/80 max-w-md">
+                    Overview of key items already delivered to beneficiaries: dry rations, water, and other essentials.
+                  </p>
+                </div>
+
+                {/* Total Distributed Indicator */}
+                <div className="sm:text-right">
+                  <p className="text-[11px] uppercase tracking-wide text-emerald-200/80 font-semibold">
+                    Total Items Distributed
+                  </p>
+                  <p className="text-2xl font-bold">
+                    <CountUp end={totals.total_quantity_sent} duration={1.2} separator="," />{" "}
+                    <span className="ml-1 text-xs font-normal text-emerald-100/80">units</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Pills */}
+              <div className="px-5 pb-5 pt-4">
+                <div className="grid gap-3 md:grid-cols-3">
+                  {/* Column 1: Rice & Dhal */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between rounded-xl border border-emerald-600/40 bg-emerald-900/40 px-3 py-2.5 backdrop-blur-sm">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-100/90 font-semibold">
+                          Rice Distributed
+                        </p>
+                        <p className="text-[11px] text-emerald-100/70">Total kilograms sent out</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xl font-semibold leading-tight">
+                          <CountUp end={sentBreakdown.rice_kg_sent} duration={1.2} separator="," />
+                        </p>
+                        <p className="text-[10px] text-emerald-100/70">kg</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between rounded-xl border border-emerald-600/30 bg-emerald-900/30 px-3 py-2.5 backdrop-blur-sm">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-100/90 font-semibold">
+                          Dhal Distributed
+                        </p>
+                        <p className="text-[11px] text-emerald-100/70">Total kilograms sent out</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xl font-semibold leading-tight">
+                          <CountUp end={sentBreakdown.dhal_kg_sent} duration={1.2} separator="," />
+                        </p>
+                        <p className="text-[10px] text-emerald-100/70">kg</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Column 2: Salt & Sugar */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between rounded-xl border border-emerald-600/30 bg-emerald-900/30 px-3 py-2.5 backdrop-blur-sm">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-100/90 font-semibold">
+                          Salt Distributed
+                        </p>
+                        <p className="text-[11px] text-emerald-100/70">Total kilograms sent out</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xl font-semibold leading-tight">
+                          <CountUp end={sentBreakdown.salt_kg_sent} duration={1.2} separator="," />
+                        </p>
+                        <p className="text-[10px] text-emerald-100/70">kg</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between rounded-xl border border-emerald-600/40 bg-emerald-900/40 px-3 py-2.5 backdrop-blur-sm">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-100/90 font-semibold">
+                          Sugar Distributed
+                        </p>
+                        <p className="text-[11px] text-emerald-100/70">Total kilograms sent out</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xl font-semibold leading-tight">
+                          <CountUp end={sentBreakdown.sugar_kg_sent} duration={1.2} separator="," />
+                        </p>
+                        <p className="text-[10px] text-emerald-100/70">kg</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Column 3: Water & Other essentials */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-900/30 px-3 py-2.5 backdrop-blur-sm">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-100/90 font-semibold">
+                          Water Bottles
+                        </p>
+                        <p className="text-[11px] text-emerald-100/70">Distributed units</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xl font-semibold leading-tight">
+                          <CountUp end={sentBreakdown.water_bottles_sent} duration={1.2} separator="," />
+                        </p>
+                        <p className="text-[10px] text-emerald-100/70">bottles</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-900/40 px-3 py-2.5 backdrop-blur-sm">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-100/90 font-semibold">
+                          Other Essentials
+                        </p>
+                        <p className="text-[11px] text-emerald-100/70">Mixed medical, hygiene & food</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xl font-semibold leading-tight">
+                          <CountUp end={sentBreakdown.other_essentials_sent} duration={1.2} separator="," />
+                        </p>
+                        <p className="text-[10px] text-emerald-100/70">pcs</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             {/* CATEGORY BREAKDOWN */}
             <div className="mt-4">
