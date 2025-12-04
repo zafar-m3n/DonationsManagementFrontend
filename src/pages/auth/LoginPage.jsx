@@ -46,7 +46,7 @@ const LoginPage = () => {
         token.setUserData(res.data.data.user);
 
         // Always go to dashboard (no admin roles in backend)
-        navigate("/dashboard");
+        navigate("/");
       } else {
         Notification.error(res.data.error || "Unexpected response from server.");
       }

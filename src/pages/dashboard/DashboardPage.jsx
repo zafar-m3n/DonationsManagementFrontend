@@ -4,6 +4,7 @@ import API from "@/services/index";
 import Icon from "@/components/ui/Icon";
 import Modal from "@/components/ui/Modal";
 import CountUp from "react-countup";
+import Spinner from "@/components/ui/Spinner";
 
 const FUNDS_ALLOCATED_LKR = 3500000; // 3.5M LKR (static for now)
 
@@ -83,7 +84,11 @@ const DashboardPage = () => {
     <DefaultLayout>
       <div className="space-y-6">
         {/* ERROR / LOADING STATES */}
-        {loading && <p className="text-sm text-slate-500">Loading dashboard summary…</p>}
+        {loading && (
+          <div className="my-4">
+            <Spinner />
+          </div>
+        )}
 
         {!loading && errorMsg && <p className="text-sm text-red-600">{errorMsg}</p>}
 
@@ -269,7 +274,7 @@ const DashboardPage = () => {
 
             {/* CATEGORY BREAKDOWN */}
             <div className="mt-4">
-              <h2 className="text-lg font-semibold text-slate-800 mb-2">Stock by Category</h2>
+              <h2 className="text-lg font-semibold text-slate-800 mb-2">Donations by Category</h2>
               {summary.categories && summary.categories.length > 0 ? (
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {summary.categories.map((cat, index) => {

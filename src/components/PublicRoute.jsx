@@ -9,7 +9,7 @@ const PublicRoute = ({ children }) => {
     if (user?.role === "admin") {
       return <Navigate to="/admin/dashboard" replace />;
     } else {
-      return <Navigate to="/dashboard" replace />;
+      return <Navigate to="/" replace />;
     }
   }
 

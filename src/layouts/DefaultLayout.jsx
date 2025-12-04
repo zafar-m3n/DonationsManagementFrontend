@@ -41,8 +41,8 @@ const DefaultLayout = ({ children }) => {
             <div className="flex items-center gap-3">
               <img src="/logo.png" alt="SLMCS Logo" className="w-10 h-10 object-contain" />
 
-              <Link to="/dashboard" className="text-xl font-semibold">
-                SLMCS Donation Management {!isLoggedIn && <span className="text-accent">Dashboard</span>}
+              <Link to="/" className="text-xl font-semibold">
+                SLMCS Donation {!isLoggedIn && <span className="text-accent">Dashboard</span>}
               </Link>
             </div>
 
@@ -50,7 +50,7 @@ const DefaultLayout = ({ children }) => {
             {isLoggedIn && (
               <nav className="flex items-center gap-6 text-sm mt-2 sm:mt-0">
                 <NavLink
-                  to="/dashboard"
+                  to="/"
                   className={({ isActive }) => (isActive ? "text-accent font-semibold" : "hover:text-accent")}
                 >
                   Dashboard
@@ -115,7 +115,7 @@ const DefaultLayout = ({ children }) => {
 
       {/* FOOTER */}
       <footer className="py-4 text-center text-sm text-gray-500 border-t border-gray-200">
-        Developed by{" "}
+        Developed for SLMCS Foundation Youth Wing by{" "}
         <a
           href="https://zafarm3n.xyz"
           target="_blank"

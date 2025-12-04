@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
+
+    <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SLMCS Youth Wing Rations Inventory</title>
+
+    <!-- SEO: Title + Description -->
+    <title>SLMCS Youth Wing Flood-Relief Donation Tracker</title>
+    <meta
+      name="description"
+      content="A simple and transparent donation tracker built for SLMCS Youth Wing's flood-relief efforts. View real-time stock levels, track donated items, and see how rations are distributed to families in need."
+    />
+    <meta
+      name="keywords"
+      content="SLMCS, youth wing, donation tracker, flood relief, rations inventory, Sri Lanka, charity"
+    />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Canonical (update domain if needed) -->
+    <link rel="canonical" href="https://rations.slmcs.lk/" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#065f46" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SLMCS Youth Wing Flood-Relief Donation Tracker" />
+    <meta property="og:title" content="SLMCS Youth Wing Flood-Relief Donation Tracker" />
+    <meta
+      property="og:description"
+      content="A simple and transparent donation tracker built for SLMCS Youth Wing's flood-relief efforts. View real-time stock levels, track donated items, and see how rations are distributed to families in need."
+    />
+    <meta property="og:url" content="https://rations.slmcs.lk/" />
+    <meta property="og:image" content="https://rations.slmcs.lk/logo.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SLMCS Youth Wing Flood-Relief Donation Tracker" />
+    <meta
+      name="twitter:description"
+      content="A simple and transparent donation tracker built for SLMCS Youth Wing's flood-relief efforts. View real-time stock levels, track donated items, and see how rations are distributed to families in need."
+    />
+    <meta name="twitter:image" content="https://rations.slmcs.lk/logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SLMCS Youth Wing",
+        "url": "https://rations.slmcs.lk/",
+        "logo": "https://rations.slmcs.lk/logo.png",
+        "description": "A simple and transparent donation tracker built for SLMCS Youth Wing's flood-relief efforts. View real-time stock levels, track donated items, and see how rations are distributed to families in need.",
+        "areaServed": "LK"
+      }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +68,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
