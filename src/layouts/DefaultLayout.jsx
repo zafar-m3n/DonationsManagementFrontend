@@ -42,7 +42,7 @@ const DefaultLayout = ({ children }) => {
               <img src="/logo.png" alt="SLMCS Logo" className="w-10 h-10 object-contain" />
 
               <Link to="/" className="text-xl font-semibold">
-                SLMCS Donation {!isLoggedIn && <span className="text-accent">Dashboard</span>}
+                SLMCS {!isLoggedIn && <span className="text-accent">Flood Relief</span>} Donations
               </Link>
             </div>
 
