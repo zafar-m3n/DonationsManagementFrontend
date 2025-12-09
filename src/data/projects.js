@@ -244,13 +244,13 @@ const projects = [
     id: "p01",
     number: 1,
 
-    title: "28 Dec – 600 Lunch Packs (Puttalam)",
-    date: "28 Dec 2025 (Friday)",
+    title: "28 Nov – 600 Lunch Packs (Puttalam)",
+    date: "28 Nov 2025 (Friday)",
     location: "Puttalam",
     headlineMetric: "600 lunch packs",
 
     shortDescription:
-      "On Friday, 28th December 2025, the SLMCS Youth Wing carried out a large-scale lunch distribution in the Puttalam area, providing 600 freshly prepared lunch packs to families affected by the floods.",
+      "On Friday, 28th November 2025, the SLMCS Youth Wing carried out a large-scale lunch distribution in the Puttalam area, providing 600 freshly prepared lunch packs to families affected by the floods.",
     images: [
       { url: p1Img1, alt: "Puttalam lunch packs – image 1" },
       { url: p1Img2, alt: "Puttalam lunch packs – image 2" },
@@ -280,13 +280,13 @@ const projects = [
     id: "p02",
     number: 2,
 
-    title: "29 Dec – 240 Dinner Packs (Kolonnawa, Thihariya, Ruwanwella, Kannathota)",
-    date: "29 Dec 2025",
-    location: "Kolonnawa · Thihariya · Ruwanwella · Kannathota",
+    title: "29 Nov – 240 Dinner Packs (Kolonnawa, Thihariya, Ruwanwella, Kannanthota)",
+    date: "29 Nov 2025 (Saturday)",
+    location: "Kolonnawa · Thihariya · Ruwanwella · Kannanthota",
     headlineMetric: "240 dinner packs",
 
     shortDescription:
-      "On 29th December 2025, the SLMCS Youth Wing organised a multi-location dinner distribution, providing 240 dinner packs to flood-affected families across Kolonnawa, Thihariya, Ruwanwella and Kannathota.",
+      "On 29th November 2025, the SLMCS Youth Wing organised a multi-location dinner distribution, providing 240 dinner packs to flood-affected families across Kolonnawa, Thihariya, Ruwanwella and Kannanthota.",
 
     images: [
       { url: p2Img1, alt: "240 dinner packs – image 1" },
@@ -323,13 +323,13 @@ const projects = [
     id: "p03",
     number: 3,
 
-    title: "30 Dec – 150 Lunch Packs (Sedawatta)",
-    date: "30 Dec 2025",
+    title: "30 Nov – 150 Lunch Packs (Sedawatta)",
+    date: "30 Nov 2025",
     location: "Sedawatta",
     headlineMetric: "150 lunch packs",
 
     shortDescription:
-      "On 30th December 2025, the SLMCS Youth Wing carried out a lunch distribution in Sedawatta, providing 150 freshly prepared lunch packs to families affected by the floods.",
+      "On 30th November 2025, the SLMCS Youth Wing carried out a lunch distribution in Sedawatta, providing 150 freshly prepared lunch packs to families affected by the floods.",
 
     images: [],
 
@@ -339,13 +339,13 @@ const projects = [
     id: "p04",
     number: 4,
 
-    title: "30 Dec – 200 Dinner Packs (Sedawatta)",
-    date: "30 Dec 2025",
+    title: "30 Nov – 200 Dinner Packs (Sedawatta)",
+    date: "30 Nov 2025",
     location: "Sedawatta",
     headlineMetric: "200 dinner packs",
 
     shortDescription:
-      "On 30th December 2025, the SLMCS Youth Wing conducted an evening dinner distribution in Sedawatta, delivering 200 dinner packs to families continuing flood recovery efforts.",
+      "On 30th November 2025, the SLMCS Youth Wing conducted an evening dinner distribution in Sedawatta, delivering 200 dinner packs to families continuing flood recovery efforts.",
 
     images: [
       { url: p4Img1, alt: "Sedawatta dinner packs – image 1" },
