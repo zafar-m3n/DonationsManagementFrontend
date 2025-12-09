@@ -98,6 +98,7 @@ import p7Img42 from "@/assets/project7/images/42.jpg";
 import p7Img43 from "@/assets/project7/images/43.jpg";
 import p7Img44 from "@/assets/project7/images/44.jpg";
 import p7Img45 from "@/assets/project7/images/45.jpg";
+import p7Img46 from "@/assets/project7/images/46.jpeg";
 
 import p7Vid1 from "@/assets/project7/videos/1.mp4";
 import p7Vid2 from "@/assets/project7/videos/2.mp4";
@@ -218,10 +219,6 @@ import p13Img2 from "@/assets/project13/images/2.jpeg";
 import p13Img3 from "@/assets/project13/images/3.jpeg";
 import p13Img4 from "@/assets/project13/images/4.jpeg";
 import p13Img5 from "@/assets/project13/images/5.jpeg";
-import p13Img6 from "@/assets/project13/images/6.jpeg";
-import p13Img7 from "@/assets/project13/images/7.jpeg";
-import p13Img8 from "@/assets/project13/images/8.jpeg";
-import p13Img9 from "@/assets/project13/images/9.jpeg";
 
 import p13Vid1 from "@/assets/project13/videos/1.mp4";
 import p13Vid2 from "@/assets/project13/videos/2.mp4";
@@ -229,11 +226,18 @@ import p13Vid3 from "@/assets/project13/videos/3.mp4";
 import p13Vid4 from "@/assets/project13/videos/4.mp4";
 import p13Vid5 from "@/assets/project13/videos/5.mp4";
 import p13Vid6 from "@/assets/project13/videos/6.mp4";
-import p13Vid7 from "@/assets/project13/videos/7.mp4";
-import p13Vid8 from "@/assets/project13/videos/8.mp4";
-import p13Vid9 from "@/assets/project13/videos/9.mp4";
-import p13Vid10 from "@/assets/project13/videos/10.mp4";
-import p13Vid11 from "@/assets/project13/videos/11.mp4";
+
+import p14Img1 from "@/assets/project14/images/1.jpeg";
+import p14Img2 from "@/assets/project14/images/2.jpeg";
+import p14Img3 from "@/assets/project14/images/3.jpeg";
+import p14Img4 from "@/assets/project14/images/4.jpeg";
+import p14Img5 from "@/assets/project14/images/5.jpeg";
+
+import p14Vid1 from "@/assets/project14/videos/1.mp4";
+import p14Vid2 from "@/assets/project14/videos/2.mp4";
+import p14Vid3 from "@/assets/project14/videos/3.mp4";
+import p14Vid4 from "@/assets/project14/videos/4.mp4";
+import p14Vid5 from "@/assets/project14/videos/5.mp4";
 
 const projects = [
   {
@@ -446,6 +450,8 @@ const projects = [
       { url: p7Img43, alt: "Puttlam relief – image 43" },
       { url: p7Img44, alt: "Puttlam relief – image 44" },
       { url: p7Img45, alt: "Puttlam relief – image 45" },
+      { url: p7Img45, alt: "Puttlam relief – image 45" },
+      { url: p7Img46, alt: "Puttlam relief – image 46" },
     ],
 
     videos: [
@@ -651,10 +657,10 @@ const projects = [
     title: "Flood Clean-Up Operations (Kohilawatte)",
     date: "7 Dec 2025",
     location: "Kohilawatte",
-    headlineMetric: "Post-flood clean-up support",
+    headlineMetric: "100 clean-up kits",
 
     shortDescription:
-      "On 7th December 2025, the SLMCS Youth Wing carried out post-flood clean-up operations in Kohilawatte, providing tools, protective gear, and volunteer manpower to help families clear mud, debris, and damaged household items from their homes and surrounding areas.",
+      "On 7th December 2025, the SLMCS Youth Wing distributed 100 clean-up packs in Kohilawatte to support families in clearing flood debris, mud, and damaged household items as they began restoring their homes.",
 
     images: [
       { url: p13Img1, alt: "Kohilawatte flood clean-up – image 1" },
@@ -662,10 +668,6 @@ const projects = [
       { url: p13Img3, alt: "Kohilawatte flood clean-up – image 3" },
       { url: p13Img4, alt: "Kohilawatte flood clean-up – image 4" },
       { url: p13Img5, alt: "Kohilawatte flood clean-up – image 5" },
-      { url: p13Img6, alt: "Kohilawatte flood clean-up – image 6" },
-      { url: p13Img7, alt: "Kohilawatte flood clean-up – image 7" },
-      { url: p13Img8, alt: "Kohilawatte flood clean-up – image 8" },
-      { url: p13Img9, alt: "Kohilawatte flood clean-up – image 9" },
     ],
 
     videos: [
@@ -675,11 +677,34 @@ const projects = [
       { url: p13Vid4, description: "Kohilawatte flood clean-up – video 4" },
       { url: p13Vid5, description: "Kohilawatte flood clean-up – video 5" },
       { url: p13Vid6, description: "Kohilawatte flood clean-up – video 6" },
-      { url: p13Vid7, description: "Kohilawatte flood clean-up – video 7" },
-      { url: p13Vid8, description: "Kohilawatte flood clean-up – video 8" },
-      { url: p13Vid9, description: "Kohilawatte flood clean-up – video 9" },
-      { url: p13Vid10, description: "Kohilawatte flood clean-up – video 10" },
-      { url: p13Vid11, description: "Kohilawatte flood clean-up – video 11" },
+    ],
+  },
+  {
+    id: "p14",
+    number: 14,
+
+    title: "Flood Clean-Up Operations (Kohilawatte)",
+    date: "8 Dec 2025",
+    location: "Kohilawatte",
+    headlineMetric: "400 cleaning supplies and care packages",
+
+    shortDescription:
+      "On 8th December 2025, the SLMCS Youth Wing carried out a second phase of relief in Kohilawatte by distributing 400 cleaning supplies and care kits to help families continue post-flood recovery with hygiene, safety, and home sanitation needs.",
+
+    images: [
+      { url: p14Img1, alt: "Kohilawatte flood clean-up – image 1" },
+      { url: p14Img2, alt: "Kohilawatte flood clean-up – image 2" },
+      { url: p14Img3, alt: "Kohilawatte flood clean-up – image 3" },
+      { url: p14Img4, alt: "Kohilawatte flood clean-up – image 4" },
+      { url: p14Img5, alt: "Kohilawatte flood clean-up – image 5" },
+    ],
+
+    videos: [
+      { url: p14Vid1, description: "Kohilawatte flood clean-up – video 1" },
+      { url: p14Vid2, description: "Kohilawatte flood clean-up – video 2" },
+      { url: p14Vid3, description: "Kohilawatte flood clean-up – video 3" },
+      { url: p14Vid4, description: "Kohilawatte flood clean-up – video 4" },
+      { url: p14Vid5, description: "Kohilawatte flood clean-up – video 5" },
     ],
   },
 ];
