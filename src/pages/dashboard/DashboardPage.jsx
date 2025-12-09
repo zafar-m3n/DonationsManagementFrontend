@@ -5,8 +5,8 @@ import CountUp from "react-countup";
 import projects from "@/data/projects";
 
 const FUNDS_ALLOCATED_LKR = 4_500_000; // 3.5M LKR
-const TOTAL_ITEMS_DONATED = 7500; // 7500+
-const DRY_RATIONS_KG = 500; // 500+ kg
+const TOTAL_ITEMS_DONATED = 8000; // 7500+
+const DRY_RATIONS_KG = 650; // 500+ kg
 const LAST_UPDATED = "2025-12-09";
 
 const DashboardPage = () => {
