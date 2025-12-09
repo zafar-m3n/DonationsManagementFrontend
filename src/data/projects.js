@@ -623,25 +623,25 @@ const projects = [
     id: "p12",
     number: 12,
 
-    title: "1200L Water, Diapers & Sanitary Pads (Geli Oya & Mithuru)",
+    title: "1200L Water, Diapers & Sanitary Pads (Geli Oya & Muthur)",
     date: "6 Dec 2025",
-    location: "Geli Oya · Mithuru",
+    location: "Geli Oya · Muthur",
     headlineMetric: "1200L water · 50 diaper packs · 100 sanitary pad packs",
 
     shortDescription:
-      "On 6th December 2025, the SLMCS Youth Wing carried out a targeted relief distribution in Geli Oya and Mithuru, providing 1200 litres of clean water along with 50 packs of baby diapers and 100 packs of sanitary pads to support women, infants, and vulnerable families.",
+      "On 6th December 2025, the SLMCS Youth Wing carried out a targeted relief distribution in Geli Oya and Muthur, providing 1200 litres of clean water along with 50 packs of baby diapers and 100 packs of sanitary pads to support women, infants, and vulnerable families.",
 
     images: [
-      { url: p12Img1, alt: "Geli Oya and Mithuru relief distribution – image 1" },
-      { url: p12Img2, alt: "Geli Oya and Mithuru relief distribution – image 2" },
-      { url: p12Img3, alt: "Geli Oya and Mithuru relief distribution – image 3" },
-      { url: p12Img4, alt: "Geli Oya and Mithuru relief distribution – image 4" },
-      { url: p12Img5, alt: "Geli Oya and Mithuru relief distribution – image 5" },
+      { url: p12Img1, alt: "Geli Oya and Muthur relief distribution – image 1" },
+      { url: p12Img2, alt: "Geli Oya and Muthur relief distribution – image 2" },
+      { url: p12Img3, alt: "Geli Oya and Muthur relief distribution – image 3" },
+      { url: p12Img4, alt: "Geli Oya and Muthur relief distribution – image 4" },
+      { url: p12Img5, alt: "Geli Oya and Muthur relief distribution – image 5" },
     ],
 
     videos: [
-      { url: p12Vid1, description: "Geli Oya and Mithuru hygiene and water distribution – video 1" },
-      { url: p12Vid2, description: "Geli Oya and Mithuru hygiene and water distribution – video 2" },
+      { url: p12Vid1, description: "Geli Oya and Muthur hygiene and water distribution – video 1" },
+      { url: p12Vid2, description: "Geli Oya and Muthur hygiene and water distribution – video 2" },
     ],
   },
   {
