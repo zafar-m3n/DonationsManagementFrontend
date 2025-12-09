@@ -4,10 +4,10 @@ import Icon from "@/components/ui/Icon";
 import CountUp from "react-countup";
 import projects from "@/data/projects";
 
-const FUNDS_ALLOCATED_LKR = 3_500_000; // 3.5M LKR
+const FUNDS_ALLOCATED_LKR = 4_500_000; // 3.5M LKR
 const TOTAL_ITEMS_DONATED = 7500; // 7500+
 const DRY_RATIONS_KG = 500; // 500+ kg
-const LAST_UPDATED = "2025-12-06";
+const LAST_UPDATED = "2025-12-09";
 
 const DashboardPage = () => {
   const [selectedProjectId, setSelectedProjectId] = useState(projects[0]?.id ?? null);
